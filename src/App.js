@@ -7,7 +7,7 @@ function App() {
 
   // Fetch movies via fetch API
   useEffect(() => {
-    fetch('http://localhost:3000/movies/stream')
+    fetch('https://express-delta-lovat.vercel.app/stream')
       .then((response) => response.json())
       .then((data) => setMovies(data))
       .catch((err) => console.error('Error fetching movies:', err));
@@ -23,7 +23,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/movies', {
+      const response = await fetch('https://express-delta-lovat.vercel.app/movies', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ function App() {
   // Delete a movie
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/delete`, {
+      const response = await fetch(`https://express-delta-lovat.vercel.app/delete`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
